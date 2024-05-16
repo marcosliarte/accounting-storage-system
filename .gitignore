@@ -1,0 +1,7 @@
+# Diretórios para ignorar
+node_modules/
+
+#Arquivos para ignorar
+package-lock.json
+package.json
+*.doc
