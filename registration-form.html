@@ -1,11 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de empresa</title>
+    <title>Cadastro de Cliente</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    
+    <div class="container">
+        <h1>Cadastro de Cliente</h1>
+        <form id="cadastroClienteForm">
+            <fieldset>
+                <legend>Dados Empresariais</legend>
+                <label for="nomeEmpresarial">*Nome empresarial:</label>
+                <input type="text" id="nomeEmpresarial" name="nomeEmpresarial" required>
+                
+                <label for="nomeFantasia">Nome fantasia:</label>
+                <input type="text" id="nomeFantasia" name="nomeFantasia">
+                
+                <label for="cnpj">*CNPJ:</label>
+                <input type="text" id="cnpj" name="cnpj" required>
+                
+                <label for="inscricaoEstadual">Inscrição estadual:</label>
+                <input type="text" id="inscricaoEstadual" name="inscricaoEstadual">
+                
+                <label for="telefoneContato">*Telefone de contato:</label>
+                <input type="tel" id="telefoneContato" name="telefoneContato" required>
+                
+                <label for="email">*Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="endereco">*Endereço:</label>
+                <input type="text" id="endereco" name="endereco" required>
+                
+                <label for="cidade">*Cidade:</label>
+                <input type="text" id="cidade" name="cidade" required>
+                
+                <label for="estado">*Estado:</label>
+                <input type="text" id="estado" name="estado" required>
+                
+                <label for="cep">*CEP:</label>
+                <input type="text" id="cep" name="cep" required>
+            </fieldset>
+
+            <fieldset id="dadosTitular">
+                <legend>Dados Titular</legend>
+                <label for="nomeTitular">*Nome:</label>
+                <input type="text" id="nomeTitular" name="nomeTitular" required>
+                
+                <label for="cpfTitular">*CPF:</label>
+                <input type="text" id="cpfTitular" name="cpfTitular" required>
+                
+                <label for="rgTitular">*RG:</label>
+                <input type="text" id="rgTitular" name="rgTitular" required>
+                
+                <label for="telefoneTitular">*Telefone de contato:</label>
+                <input type="tel" id="telefoneTitular" name="telefoneTitular" required>
+                
+                <label for="emailTitular">*Email:</label>
+                <input type="email" id="emailTitular" name="emailTitular" required>
+                
+                <label for="enderecoTitular">*Endereço:</label>
+                <input type="text" id="enderecoTitular" name="enderecoTitular" required>
+                
+                <label for="cidadeTitular">*Cidade:</label>
+                <input type="text" id="cidadeTitular" name="cidadeTitular" required>
+                
+                <label for="estadoTitular">*Estado:</label>
+                <input type="text" id="estadoTitular" name="estadoTitular" required>
+                
+                <label for="cepTitular">*CEP:</label>
+                <input type="text" id="cepTitular" name="cepTitular" required>
+            </fieldset>
+            
+            <button type="button" id="addSocio">+ Adicionar mais um sócio</button>
+            <input type="submit" value="Cadastrar">
+        </form>
+    </div>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
