@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empresas cadastradas</title>
+    <title>Empresas Cadastradas</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
@@ -22,6 +23,45 @@
             </div>
         </nav>
     </header>
-    
+
+    <main class="container">
+        <h1>Empresas Cadastradas</h1>
+        <table id="empresasTable">
+            <thead>
+                <tr>
+                    <th>Nome Empresarial</th>
+                    <th>Nome Fantasia</th>
+                    <th>CNPJ</th>
+                    <th>Telefone de Contato</th>
+                    <th>Email</th>
+                    <th>Endereço</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Exemplo de uma empresa cadastrada -->
+                <tr>
+                    <td>Empresa Exemplo Ltda.</td>
+                    <td>Exemplo</td>
+                    <td>12.345.678/0001-90</td>
+                    <td>(11) 1234-5678</td>
+                    <td>exemplo@empresa.com</td>
+                    <td>Rua Exemplo, 123 - São Paulo, SP</td>
+                    <td>
+                        <button class="viewBtn">Ver</button>
+                        <button class="editBtn">Editar</button>
+                        <button class="deleteBtn">Excluir</button>
+                    </td>
+                </tr>
+                <!-- As demais empresas cadastradas serão inseridas aqui -->
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Escritório Contábil. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/scriptEmpresas.js"></script>
 </body>
 </html>
