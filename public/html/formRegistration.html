@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de Cadastro Empresa</title>
-</head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Formulário de Cadastro Empresa</title>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+</head>    
 <body>
-    <Nav>
+    <nav>
         <img src="#" alt="Logo Adcon">
         <li>Home</li>
         <li>Sair</li>
-    </Nav>
+    </nav>
     <form action="#">
         <h1>Formulário de cadastro de cliente</h1>
         <div class="identificacao_empresa">
             <label for="CNPJ">CNPJ:</label>
             <input type="text" id="CNPJ" required>
+            <span id="cnpjError" style="color:red;"></span>
             <label for="Nome empresarial">Nome empresarial:</label>
             <input type="text" id="nomeEmpresa" required>
             <label for="porte">Porte:</label>
@@ -61,7 +64,7 @@
             <input type="date" id="dataNascimento" required>
             <label for="status civil">Status Civil:</label>
             <select required>
-                <option value="solteiro">solteiro</option>
+                <option value="solteiro">Solteiro</option>
                 <option value="casado">Casado</option>
                 <option value="divorciado">Divorciado</option>
                 <option value="viuvo">Viúvo</option>
@@ -75,8 +78,8 @@
             </select>
             <label for="sexo">Sexo:</label>
             <select required>
-                <option value="masculino">solteiro</option>
-                <option value="feminino">Casado</option>
+                <option value="masculino">Masculino</option>
+                <option value="feminino">Feminino</option>
             </select>
             <button class="buttonAddPartner">+ Adicionar sócio</button>
         </div>
@@ -104,6 +107,7 @@
         </div>
         <button type="submit">Enviar</button>
     </form>
-    
+  <button value="voltar">Voltar</button>
 </body>
+<script src="/public/js/formRegistration.js"></script>
 </html>
