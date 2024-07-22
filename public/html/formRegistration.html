@@ -18,11 +18,16 @@
         <div class="identificacao_empresa">
             <label for="CNPJ">CNPJ:</label>
             <input type="text" id="CNPJ" required>
-            <span id="cnpjError" style="color:red;"></span>
+            <span id="cnpjError" style="color:red"></span>
             <label for="Nome empresarial">Nome empresarial:</label>
             <input type="text" id="nomeEmpresa" required>
             <label for="porte">Porte:</label>
-            <input type="text" id="porte" required>
+            <select required>
+                <option value="mei">MEI</option>
+                <option value="me">ME</option>
+                <option value="epp">EPP</option>
+                <option value="outros">Outros</option>
+            </select>
             <label for="Nome fantasia">Nome fantasia:</label>
             <input type="text" id="nomeFantasia">
             <label for="Incrição estadual">Inscrição estadual:</label>
@@ -48,6 +53,7 @@
             <input type="text" id="nomeTitular" required>
             <label for="CPF">CPF:</label>
             <input type="text" id="CPF" required>
+            <span id="cpfError" style="color:red"></span>
             <label for="logradouro">Logradouro:</label>
             <input type="text" id="logradouro" required> 
             <label for="numero">Número:</label>
