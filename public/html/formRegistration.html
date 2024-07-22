@@ -27,7 +27,7 @@
             <label for="CNAE">CNAE Principal:</label>
             <input type="text" id="CNAE" required>
             <label for="Natureza juridica">Natureza Jurídica:</label>
-            <select>
+            <select required>
                 <option value="sociedade">Sociedade Empresaria Limitada</option>
                 <option value="individual">Empresário Individual</option>
                 <option value="outros">Outras</option>
@@ -36,6 +36,8 @@
             <input type="date" id="dataAbertura" required>
             <label for="simplesNacional">Simples Nacional:</label>
             <input type="checkbox" id="simples_nacional" required>
+            <label for="senha simples">Senha Simples Nacional:</label>
+            <input type="text" id="senhaSimples" required>
         </div>
         <div class="titular">
             <h2>Titular/Sócios</h2>
@@ -43,6 +45,18 @@
             <input type="text" id="nomeTitular" required>
             <label for="CPF">CPF:</label>
             <input type="text" id="CPF" required>
+            <label for="logradouro">Logradouro:</label>
+            <input type="text" id="logradouro" required> 
+            <label for="numero">Número:</label>
+            <input type="number" id="numero" required>
+            <label for="complemento">Complemento:</label>
+            <input type="text" id="complemento">
+            <label for="bairro">Bairro/Distrito:</label>
+            <input type="text" id="bairro" required>
+            <label for="municipio">Município:</label>
+            <input type="text" id="municipio" required>
+            <label for="CEP">CEP:</label>
+            <input type="number" id="CEP" required>
             <label for="data nascimento">Data de nascimento:</label>
             <input type="date" id="dataNascimento" required>
             <label for="status civil">Status Civil:</label>
@@ -64,15 +78,20 @@
                 <option value="masculino">solteiro</option>
                 <option value="feminino">Casado</option>
             </select>
+            <button class="buttonAddPartner">+ Adicionar sócio</button>
         </div>
         <h2>Endereço</h2>
         <div class="endereco_empresa">
             <label for="logradouro">Logradouro:</label>
             <input type="text" id="logradouro" required> 
             <label for="numero">Número:</label>
-            <input type="number" id="numero">
+            <input type="number" id="numero" required>
             <label for="complemento">Complemento:</label>
             <input type="text" id="complemento">
+            <label for="bairro">Bairro/Distrito:</label>
+            <input type="text" id="bairro">
+            <label for="municipio">Município:</label>
+            <input type="text" id="municipio">
             <label for="CEP">CEP:</label>
             <input type="number" id="CEP" required>
         </div>
