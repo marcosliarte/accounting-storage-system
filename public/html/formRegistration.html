@@ -11,6 +11,52 @@
         <li>Home</li>
         <li>Sair</li>
     </Nav>
+    <form action="#">
+        <h1>Formulário de cadastro de cliente</h1>
+        <div class="identificacao_empresa">
+            <label for="CNPJ">CNPJ:</label>
+            <input type="text" id="CNPJ" required>
+            <label for="Nome empresarial">Nome empresarial:</label>
+            <input type="text" id="nomeEmpresa" required>
+            <label for="porte">Porte:</label>
+            <input type="text" id="porte" required>
+            <label for="Nome fantasia">Nome fantasia:</label>
+            <input type="text" id="nomeFantasia">
+            <label for="Incrição estadual">Inscrição estadual:</label>
+            <input type="text" id="FIC">
+            <label for="CNAE">CNAE Principal:</label>
+            <input type="text" id="CNAE" required>
+            <label for="Natureza juridica">Natureza Jurídica:</label>
+            <select>
+                <option value="sociedade">Sociedade Empresaria Limitada</option>
+                <option value="individual">Empresário Individual</option>
+                <option value="outros">Outras</option>
+            </select>
+            <label for="Data abertura">Data de abertura:</label>
+            <input type="date" id="dataAbertura" required>
+            <label for="simplesNacional">Simples Nacional:</label>
+            <input type="checkbox" id="simples_nacional" required>
+        </div>
+        <h2>Endereço</h2>
+        <div class="endereco_empresa">
+            <label for="logradouro">Logradouro:</label>
+            <input type="text" id="logradouro" required> 
+            <label for="numero">Número:</label>
+            <input type="number" id="numero">
+            <label for="complemento">Complemento:</label>
+            <input type="text" id="complemento">
+            <label for="CEP">CEP:</label>
+            <input type="number" id="CEP" required>
+        </div>
+        <div class="contato">
+            <h2>Contato</h2>
+            <label for="email">e-mail:</label>
+            <input type="email" id="email" required>
+            <label for="telefone">telefone:</label>
+            <input type="tel" id="telefone" required>
+        </div>
+        <button type="submit">Enviar</button>
+    </form>
     
 </body>
 </html>
