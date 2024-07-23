@@ -1,0 +1,178 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+    color: #333;
+}
+
+nav {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 8px;
+}
+
+nav img {
+    max-height: 40px;
+}
+
+nav li {
+    list-style: none;
+    display: inline;
+    margin: 0 15px;
+    color: #fff;
+}
+
+.form-step {
+    background: #d9f7ff;
+    border-left: 5px solid #007bff;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+h1, h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #555;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="email"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.buttonAddPartner {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.buttonAddPartner:hover {
+    background-color: #218838;
+}
+
+span {
+    display: block;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #d9534f;
+}
+
+input.error,
+select.error {
+    border-color: #d9534f;
+}
+
+/* Ajustes específicos */
+.identificacao_empresa,
+.titular,
+.endereco_empresa,
+.contato {
+    margin-bottom: 20px;
+}
+
+.identificacao_empresa label,
+.titular label,
+.endereco_empresa label,
+.contato label {
+    margin: 5px 0;
+}
+
+.identificacao_empresa input,
+.titular input,
+.endereco_empresa input,
+.contato input,
+.identificacao_empresa select,
+.titular select,
+.endereco_empresa select,
+.contato select {
+    max-width: 100%;
+}
+
+button[type="submit"],
+button[value="voltar"] {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 20px auto;
+}
+
+.socio-container {
+    margin-bottom: 20px;
+}
+
+.socio-info {
+    margin-bottom: 15px;
+}
+
+.socio-info input,
+.socio-info select {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+

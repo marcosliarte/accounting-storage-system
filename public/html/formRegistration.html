@@ -6,6 +6,7 @@
    <title>Formulário de Cadastro Empresa</title>
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+   <link rel="stylesheet" href="/public/css/style.css"> <!-- Certifique-se de ter um arquivo de estilo para definir a classe hidden -->
 </head>    
 <body>
     <nav>
@@ -13,6 +14,9 @@
         <li>Home</li>
         <li>Sair</li>
     </nav>
+    <div class="form-step">
+        <p>Passo 1 de 2: Preencha as informações a seguir para concluir o cadastro.</p>
+    </div>
     <form action="#">
         <h1>Formulário de cadastro de cliente</h1>
         <div class="identificacao_empresa">
@@ -43,65 +47,86 @@
             <label for="Data abertura">Data de abertura:</label>
             <input type="date" id="dataAbertura" required>
             <label for="simplesNacional">Simples Nacional:</label>
-            <input type="checkbox" id="simples_nacional" required>
-            <label for="senha simples">Senha Simples Nacional:</label>
-            <input type="text" id="senhaSimples" required>
+            <input type="checkbox" id="simples_nacional">
+            <div id="senhaSimplesContainer" class="hidden">
+                <label for="senhaSimples">Senha Simples Nacional:</label>
+                <input type="text" id="senhaSimples">
+            </div>
         </div>
-        <div class="titular">
+        <div class="titulares">
             <h2>Titular/Sócios</h2>
-            <label for="titular">Nome titular:</label>
-            <input type="text" id="nomeTitular" required minlength="3">
-            <label for="CPF">CPF:</label>
-            <input type="text" id="CPF" required>
-            <span id="cpfError" style="color:red"></span>
-            <label for="RG">RG:</label>
-            <input type="text" id="RG" required>
-            <label for="data de emissão">Data de emissão:</label>
-            <input type="date" id="dataEmissãoRg" required>
-            <label for="logradouro">Logradouro:</label>
-            <input type="text" id="logradouro" required> 
-            <label for="numero">Número:</label>
-            <input type="number" id="numero" required>
-            <label for="complemento">Complemento:</label>
-            <input type="text" id="complemento">
-            <label for="bairro">Bairro/Distrito:</label>
-            <input type="text" id="bairro" required>
-            <label for="municipio">Município:</label>
-            <input type="text" id="municipio" required>
-            <label for="CEP">CEP:</label>
-            <input type="number" id="CEP" required>
-            <label for="data nascimento">Data de nascimento:</label>
-            <input type="date" id="dataNascimento" required>
-            <label for="status civil">Status Civil:</label>
-            <select required>
-                <option value="solteiro">Solteiro</option>
-                <option value="casado">Casado</option>
-                <option value="divorciado">Divorciado</option>
-                <option value="viuvo">Viúvo</option>
-            </select>
-            <label for="status civil">Regime Casamento:</label>
-            <select required>
-                <option value="parcial">Comunhão Parcial de Bens</option>
-                <option value="universal">Comunhão Universal de Bens</option>
-                <option value="convencional">Separação Convencional de Bens</option>
-                <option value="obrigatoria">Separação Obrigatória de Bens</option>
-            </select>
-            <label for="sexo">Sexo:</label>
-            <select required>
-                <option value="masculino">Masculino</option>
-                <option value="feminino">Feminino</option>
-            </select>
-            <label class="quadroSocietário">Tipo de responsável</label>
-            <select required>
-                <option value="socioAdministrador">Sócio - Administrador</option>
-                <option value="socio">Sócio</option>
-                <option value="titular">Titular</option>
-                <option value="presidente">Presidente</option>
-                <option value="outroCargo">Outro</option>
-            </select>
-            <button class="buttonAddPartner">+ Adicionar sócio</button>
+            <div class="socio-container">
+                <!-- Campos do sócio inicial -->
+                <div class="socio-info">
+                    <label for="nomeTitular1">Nome titular:</label>
+                    <input type="text" id="nomeTitular1" required minlength="3">
+        
+                    <label for="CPF1">CPF:</label>
+                    <input type="text" id="CPF1" required>
+                    <span id="cpfError1" style="color:red"></span>
+        
+                    <label for="RG1">RG:</label>
+                    <input type="text" id="RG1" required>
+        
+                    <label for="dataEmissaoRg1">Data de emissão:</label>
+                    <input type="date" id="dataEmissaoRg1" required>
+        
+                    <label for="logradouro1">Logradouro:</label>
+                    <input type="text" id="logradouro1" required> 
+        
+                    <label for="numero1">Número:</label>
+                    <input type="number" id="numero1" required>
+        
+                    <label for="complemento1">Complemento:</label>
+                    <input type="text" id="complemento1">
+        
+                    <label for="bairro1">Bairro/Distrito:</label>
+                    <input type="text" id="bairro1" required>
+        
+                    <label for="municipio1">Município:</label>
+                    <input type="text" id="municipio1" required>
+        
+                    <label for="CEP1">CEP:</label>
+                    <input type="number" id="CEP1" required>
+        
+                    <label for="dataNascimento1">Data de nascimento:</label>
+                    <input type="date" id="dataNascimento1" required>
+        
+                    <label for="statusCivil1">Status Civil:</label>
+                    <select id="statusCivil1" required>
+                        <option value="solteiro">Solteiro</option>
+                        <option value="casado">Casado</option>
+                        <option value="divorciado">Divorciado</option>
+                        <option value="viuvo">Viúvo</option>
+                    </select>
+        
+                    <label for="regimeCasamento1" id="regimeCasamentoLabel1" class="hidden">Regime Casamento:</label>
+                    <select id="regimeCasamento1" class="hidden" required>
+                        <option value="parcial">Comunhão Parcial de Bens</option>
+                        <option value="universal">Comunhão Universal de Bens</option>
+                        <option value="convencional">Separação Convencional de Bens</option>
+                        <option value="obrigatoria">Separação Obrigatória de Bens</option>
+                    </select>
+        
+                    <label for="sexo1">Sexo:</label>
+                    <select id="sexo1" required>
+                        <option value="masculino">Masculino</option>
+                        <option value="feminino">Feminino</option>
+                    </select>
+        
+                    <label class="quadroSocietário" for="tipoResponsavel1">Tipo de responsável:</label>
+                    <select id="tipoResponsavel1" required>
+                        <option value="socioAdministrador">Sócio - Administrador</option>
+                        <option value="socio">Sócio</option>
+                        <option value="titular">Titular</option>
+                        <option value="presidente">Presidente</option>
+                        <option value="outroCargo">Outro</option>
+                    </select>
+                </div>
+            </div>
+            <button type="button" id="addSocio">+ Adicionar sócio</button>
         </div>
-        <h2>Endereço</h2>
+        <h2>Endereço Empresa</h2>
         <div class="endereco_empresa">
             <label for="logradouro">Logradouro:</label>
             <input type="text" id="logradouro" required> 
@@ -125,8 +150,9 @@
         </div>
         <button type="submit">Avançar</button>
     </form>
-    <button value="voltar">Voltar</button>
+    <button id="voltarBtn" class="voltar-button">
+        &larr; Voltar
+    </button>      
     <script src="/public/js/validationForm.js"></script>
-    <script src="/public/js/apiCep.js"></script>
 </body>
 </html>
