@@ -20,7 +20,7 @@
             <input type="text" id="CNPJ" required>
             <span id="cnpjError" style="color:red"></span>
             <label for="Nome empresarial">Nome empresarial:</label>
-            <input type="text" id="nomeEmpresa" required>
+            <input type="text" id="nomeEmpresa" required minlength="4">
             <label for="porte">Porte:</label>
             <select required>
                 <option value="mei">MEI</option>
@@ -50,10 +50,14 @@
         <div class="titular">
             <h2>Titular/Sócios</h2>
             <label for="titular">Nome titular:</label>
-            <input type="text" id="nomeTitular" required>
+            <input type="text" id="nomeTitular" required minlength="3">
             <label for="CPF">CPF:</label>
             <input type="text" id="CPF" required>
             <span id="cpfError" style="color:red"></span>
+            <label for="RG">RG:</label>
+            <input type="text" id="RG" required>
+            <label for="data de emissão">Data de emissão:</label>
+            <input type="date" id="dataEmissãoRg" required>
             <label for="logradouro">Logradouro:</label>
             <input type="text" id="logradouro" required> 
             <label for="numero">Número:</label>
@@ -87,6 +91,14 @@
                 <option value="masculino">Masculino</option>
                 <option value="feminino">Feminino</option>
             </select>
+            <label class="quadroSocietário">Tipo de responsável</label>
+            <select required>
+                <option value="socioAdministrador">Sócio - Administrador</option>
+                <option value="socio">Sócio</option>
+                <option value="titular">Titular</option>
+                <option value="presidente">Presidente</option>
+                <option value="outroCargo">Outro</option>
+            </select>
             <button class="buttonAddPartner">+ Adicionar sócio</button>
         </div>
         <h2>Endereço</h2>
@@ -107,13 +119,14 @@
         <div class="contato">
             <h2>Contato</h2>
             <label for="email">e-mail:</label>
-            <input type="email" id="email" required>
+            <input type="email" id="email" required minlength="4">
             <label for="telefone">telefone:</label>
-            <input type="tel" id="telefone" required>
+            <input type="tel" id="telefone" required minlength="8">
         </div>
-        <button type="submit">Enviar</button>
+        <button type="submit">Avançar</button>
     </form>
-  <button value="voltar">Voltar</button>
+    <button value="voltar">Voltar</button>
+    <script src="/public/js/validationForm.js"></script>
+    <script src="/public/js/apiCep.js"></script>
 </body>
-<script src="/public/js/formRegistration.js"></script>
 </html>

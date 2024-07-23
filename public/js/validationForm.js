@@ -1,23 +1,17 @@
+const camposComRequired = document.querySelectorAll("[required]");
+
+
 // Função para validar CNPJ
 function validarCnpj(cnpj) {
     cnpj = cnpj.replace(/[^\d]+/g, '');
 
-    if (cnpj == '') return false;
+    if (cnpj === '') return false;
 
-    if (cnpj.length != 14)
+    if (cnpj.length !== 14)
         return false;
 
     // Elimina CNPJs inválidos conhecidos
-    if (cnpj == "00000000000000" || 
-        cnpj == "11111111111111" || 
-        cnpj == "22222222222222" || 
-        cnpj == "33333333333333" || 
-        cnpj == "44444444444444" || 
-        cnpj == "55555555555555" || 
-        cnpj == "66666666666666" || 
-        cnpj == "77777777777777" || 
-        cnpj == "88888888888888" || 
-        cnpj == "99999999999999")
+    if (/^(\d)\1+$/.test(cnpj)) 
         return false;
 
     // Valida DVs
@@ -32,7 +26,7 @@ function validarCnpj(cnpj) {
             pos = 9;
     }
     let resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
-    if (resultado != digitos.charAt(0))
+    if (resultado !== parseInt(digitos.charAt(0)))
         return false;
 
     tamanho = tamanho + 1;
@@ -45,7 +39,7 @@ function validarCnpj(cnpj) {
             pos = 9;
     }
     resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
-    if (resultado != digitos.charAt(1))
+    if (resultado !== parseInt(digitos.charAt(1)))
         return false;
 
     return true;
@@ -54,21 +48,12 @@ function validarCnpj(cnpj) {
 // Função para validar CPF
 function validarCpf(cpf) {
     cpf = cpf.replace(/[^\d]+/g, '');
-    if (cpf == '') return false;
+    if (cpf === '') return false;
 
-    if (cpf.length != 11)
+    if (cpf.length !== 11)
         return false;
 
-    if (cpf == "00000000000" || 
-        cpf == "11111111111" || 
-        cpf == "22222222222" || 
-        cpf == "33333333333" || 
-        cpf == "44444444444" || 
-        cpf == "55555555555" || 
-        cpf == "66666666666" || 
-        cpf == "77777777777" || 
-        cpf == "88888888888" || 
-        cpf == "99999999999")
+    if (/^(\d)\1+$/.test(cpf))
         return false;
 
     // Valida DVs
@@ -82,7 +67,7 @@ function validarCpf(cpf) {
         soma += numeros.charAt(10 - i) * i;
     }
     let resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
-    if (resultado != digitos.charAt(0)) 
+    if (resultado !== parseInt(digitos.charAt(0))) 
         return false;
 
     // Calcula o segundo dígito verificador
@@ -93,7 +78,7 @@ function validarCpf(cpf) {
         soma += numeros.charAt(11 - i) * i;
     }
     resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
-    if (resultado != digitos.charAt(1))
+    if (resultado !== parseInt(digitos.charAt(1)))
         return false;
 
     return true;
@@ -130,3 +115,17 @@ $(document).ready(function(){
         }
     });
 });
+
+camposComRequired.forEach((campo) => {
+    campo.addEventListener("blur", () => verificaCampo(campo));
+});
+
+function verificaCampo(campo) {
+    if (campo.validity.valueMissing) {
+        campo.setCustomValidity('Este campo é obrigatório.');
+        campo.reportValidity();
+    } else {
+        campo.setCustomValidity('');
+    }
+}
+
